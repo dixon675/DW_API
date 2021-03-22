@@ -10,3 +10,17 @@ html, body {
 img {
 	max-width: 100%;
 }
+
+
+.container {
+	display: flex;
+	column-gap: 10px;
+	justify-content: center;
+	padding: 20px;
+}
+
+
+/* Code similar to button */
+select {
+	
+}
