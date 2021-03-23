@@ -1,25 +1,12 @@
 var xhr = new XMLHttpRequest();
 
 var baseUrl = 'http://jservice.io/api/clues'
-var query;
 
 
-var val = '/value';
-var cat = '/category';
 
-var random = '/random';
+// var random = '/random';
 
-var answer = '/answer';
-
-// $("#submit").on("click",function() {
-
-// 	query = "&count=" + $("#num").val()
-
-// 	callAPI()
-
-// })
-
-
+// var answer = '/answer';
 
 
 xhr.open('GET', baseUrl, true);
@@ -33,18 +20,34 @@ xhr.onload = function() {
 		// console.log(xhr.responseText);
 
 		console.log(clues);
-		console.log(clues.question_type)
 
 		clues.forEach(function(data) {
-			var selection = $("<select name='value' id='valSel'>");
+			var selection = $("#catSel");
 
-			var option = "<option value='" + data.value + "'>" + data.value + "</option>";
+			var title = data.category.title;
 
-			selection.html(option);
 
-		})
-		
+			var option = "<option value='" + title + "'>" + title + "</option>";
+
+			check(title, option, selection);
+
+		 })
+
+		// submit button here
+	// 	$("#submit").on("click",function() {
+
+	// 		var value = $("#valSel option:selected").text();
+
+	// })
 
 	}
 }
 
+// condition to check for repeats
+function check (data, option, selection) {
+	data.forEach(function(tag){
+		if (!data.includes(tag)) {
+			selection.append(option);
+		}
+	})
+}

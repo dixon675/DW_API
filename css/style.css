@@ -12,7 +12,7 @@ img {
 }
 
 
-.container {
+.selections {
 	display: flex;
 	column-gap: 10px;
 	justify-content: center;
