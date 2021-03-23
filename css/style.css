@@ -38,7 +38,9 @@ button {
 }
 
 button:hover {
-
+	color: #006994;
+	background-color: white;
+	transition: .5s;
 }
 
 .selections {
@@ -79,4 +81,6 @@ button:hover {
 .answer:hover {
 	transition: .4s;
 	filter: blur(0px);
+	color: #006994;
+	background-color: white;
 }

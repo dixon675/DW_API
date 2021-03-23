@@ -3,12 +3,6 @@ var xhr = new XMLHttpRequest();
 var baseUrl = 'http://jservice.io/api/clues'
 
 
-
-// var random = '/random';
-
-// var answer = '/answer';
-
-
 xhr.open('GET', baseUrl, true);
 xhr.send(null);
 
@@ -31,7 +25,6 @@ xhr.onload = function() {
 
 			var option = "<option value='" + title + "'>" + title + "</option>";
 
-			// check(title, option, selection);
 
 			if(!titleArray.includes(title)) {
 				titleArray.push(title);
