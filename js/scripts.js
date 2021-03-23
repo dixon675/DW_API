@@ -29,16 +29,35 @@ xhr.onload = function() {
 
 			var option = "<option value='" + title + "'>" + title + "</option>";
 
-			check(title, option, selection);
+			// check(title, option, selection);
 
-		 })
+			selection.append(option);
+
+		})
 
 		// submit button here
-	// 	$("#submit").on("click",function() {
+		$("#submit").on("click",function() {
 
-	// 		var value = $("#valSel option:selected").text();
+			var value = $("#valSel option:selected").text();
+			var select =$("#catSel option:selected").text();
 
-	// })
+			var viewport = $(".viewport")
+			var container = $("<div>")
+
+
+			clues.forEach(function(data){
+				if(value == data.value && select == data.category.title) {
+					
+					var questionBox = "";
+					questionBox += "<p>" + data.question +  "</p>"
+					questionBox += "<p>" + data.answer +  "</p>"
+
+					container.html(questionBox);
+					viewport.prepend(container);
+				}
+			})
+
+		})
 
 	}
 }
