@@ -17,6 +17,8 @@ xhr.onload = function() {
 	if (xhr.status == 200) {
 
 		var clues = JSON.parse(xhr.responseText);
+
+		var titleArray = [];
 		// console.log(xhr.responseText);
 
 		console.log(clues);
@@ -31,7 +33,10 @@ xhr.onload = function() {
 
 			// check(title, option, selection);
 
-			selection.append(option);
+			if(!titleArray.includes(title)) {
+				titleArray.push(title);
+				selection.append(option);
+			}
 
 		})
 
@@ -49,8 +54,8 @@ xhr.onload = function() {
 				if(value == data.value && select == data.category.title) {
 					
 					var questionBox = "";
-					questionBox += "<p>" + data.question +  "</p>"
-					questionBox += "<p>" + data.answer +  "</p>"
+					questionBox += "<h3 class='question'>" + data.question +  "</h3>"
+					questionBox += "<p class='answer'>" + data.answer +  "</p>"
 
 					container.html(questionBox);
 					viewport.prepend(container);

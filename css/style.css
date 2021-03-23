@@ -1,26 +1,82 @@
 * {
 	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
 }
 
 html, body {
 	min-height: 100vh;
 	margin: 0;
+	background-color: #051F20;
+	color: white;
 }
 
 img {
 	max-width: 100%;
 }
 
+select {
+	font-size: 25px;
+	font-weight: 600;
+	padding: 3px;
+
+	border: none;
+	text-decoration: none;
+	border-radius: 5px;
+	background-color: #006994;
+	color: white;
+}
+
+button {
+	font-size: 15px;
+	font-weight: 600;
+
+	border: none;
+	text-decoration: none;
+	border-radius: 5px;
+	background-color: #006994;
+	color: white;
+}
+
+button:hover {
+
+}
 
 .selections {
 	display: flex;
 	column-gap: 10px;
 	justify-content: center;
 	padding: 20px;
+	padding-top: 40px;
 }
 
+.viewport {
+	display: grid;
+	grid-column: 1fr;
+	padding: 25px;
+	justify-content: center;
+	text-align: center;
+	border-radius: 20px;
+	font-weight: 25px;
+}
 
-/* Code similar to button */
-select {
-	
+.question {
+	border: solid grey 1px;
+	border-radius: 20px;
+	padding: 25px;
+	background-color: #006994;
+}
+
+.answer {
+	padding: 15px;
+	filter: blur(5px);
+	font-size: 20px;
+	background-color: #006994;
+	display: inline-grid;
+
+	border-radius: 20px;
+}
+
+.answer:hover {
+	transition: .4s;
+	filter: blur(0px);
 }
